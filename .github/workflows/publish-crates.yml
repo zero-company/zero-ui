@@ -1,0 +1,35 @@
+name: Publish Crates
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - rust/packages/zero-ui
+  workflow_dispatch:
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  publish:
+    name: Publish Crates
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Install stable toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+          override: true
+
+      - name: Publish zero-ui
+        run: cargo publish --token ${ZERO_PUBLISHONLY_CRATES_TOKEN_V1} --package zero-ui
+        env:
+          ZERO_PUBLISHONLY_CRATES_TOKEN_V1: ${{ secrets.ZERO_PUBLISHONLY_CRATES_TOKEN_V1 }}
+        working-directory: ./rust
+
+
+
