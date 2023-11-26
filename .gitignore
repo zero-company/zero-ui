@@ -1,0 +1,105 @@
+# References
+# https://www.npmjs.com/package/@zero-company/zero-community
+# https://www.npmjs.com/package/@zero-company/zero-config
+# https://github.com/zero-company/zero-community
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+node_modules
+
+# testing
+coverage
+temp
+
+# next.js
+.next
+/out/
+next-env.d.ts
+
+# production
+/build
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# misc
+*.pem
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# debug logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# local env files
+.env
+.env.local
+.env*.local
+.env.development.local
+.env.test.local
+.env.production
+.env.production.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+
+# turbo
+.turbo
+.cache
+server/dist
+public/dist
+
+# bundler
+dist/
+dist-ssr/
+.output/
+*.local
+.rollup.cache
+.cache
+.parcel-cache
+
+# zero
+gitignore
+
+# astro
+.astro/
+
+# cargo
+target/
+
+# tauri
+dist/
+target/
+
+# playwright
+test-results/
+end2end/playwright-report/
+playwright/.cache/
+
+# rustfmt
+**/*.rs.bk
+
+# solid-start
+worker
+.solid
+.output
+.vercel
+.netlify
+
+# cloudflare functions on root
+/functions
