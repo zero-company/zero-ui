@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - rust/packages/zero-ui
+      - 'rust/packages/zero-ui'
   workflow_dispatch:
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
