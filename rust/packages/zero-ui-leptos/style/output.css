@@ -520,12 +520,29 @@ video {
   margin-right: auto;
 }
 
+.flex {
+  display: flex;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.w-screen {
+  width: 100vw;
+}
+
 .max-w-3xl {
   max-width: 48rem;
 }
 
 .rounded-lg {
   border-radius: 0.5rem;
+}
+
+.bg-zinc-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(24 24 27 / var(--tw-bg-opacity));
 }
 
 .bg-amber-600 {
