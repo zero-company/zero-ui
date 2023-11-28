@@ -2,6 +2,8 @@ use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
 
+use crate::app_container::*;
+
 #[component]
 pub fn App() -> impl IntoView {
     provide_meta_context();
@@ -20,7 +22,7 @@ fn Home() -> impl IntoView {
     let (count, set_count) = create_signal(0);
 
     view! {
-        <div class="flex bg-zinc-900 h-screen w-screen">
+        <AppContainer>
             <div class="my-0 mx-auto max-w-3xl text-center">
                 <h2 class="p-6 text-4xl">"Welcome to Leptos with Tailwind"</h2>
                 <p class="px-10 pb-10 text-left">
@@ -38,7 +40,7 @@ fn Home() -> impl IntoView {
                     " | Some more text"
                 </button>
             </div>
-        </div>
+        </AppContainer>
     }
 }
 

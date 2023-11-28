@@ -1,7 +1,5 @@
-mod components;
-
-use components::app::*;
 use leptos::*;
+use zero_ui_leptos::app::*;
 
 pub fn main() {
     _ = console_log::init_with_level(log::Level::Debug);
