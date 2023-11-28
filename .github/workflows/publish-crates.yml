@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'rust/packages/zero-ui/**'
   workflow_dispatch:
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
@@ -16,7 +14,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Install stable toolchain
         uses: actions-rs/toolchain@v1
@@ -25,7 +25,14 @@ jobs:
           toolchain: stable
           override: true
 
+      - name: Get zero-ui changes
+        id: zero-ui-changes
+        uses: tj-actions/changed-files@v34
+        with:
+          files: rust/packages/zero-ui/**
+
       - name: Publish zero-ui
+        if: steps.zero-ui-changes.outputs.any_changed == 'true'
         run: cargo publish --token ${ZERO_PUBLISHONLY_CRATES_TOKEN_V1} --package zero-ui
         env:
           ZERO_PUBLISHONLY_CRATES_TOKEN_V1: ${{ secrets.ZERO_PUBLISHONLY_CRATES_TOKEN_V1 }}
