@@ -2,6 +2,10 @@
 
 Open source UI library for zero projects.
 
+```
+cargo install create-tauri-app
+```
+
 ## Setup LeptosFMT
 
 ```
