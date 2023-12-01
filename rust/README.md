@@ -30,6 +30,13 @@ start command
 cargo tauri dev
 ```
 
+generate icons, https://tauri.app/v1/guides/features/icons/
+
+```
+cargo tauri icon [INPUT]
+<INPUT>    Path to the source icon (png, 1024x1024px with transparency) [default: ./app-icon.png]
+```
+
 ### Setup LeptosFMT
 
 ```
