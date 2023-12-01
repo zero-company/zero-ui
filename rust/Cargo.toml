@@ -9,3 +9,7 @@ version = "0.1.0"
 
 [workspace.dependencies]
 cargo-zero = { version = "0.1.0" }
+leptos = { version = "0.5.2", features = ["csr", "nightly"] }
+leptos-meta = { version = "0.5.2", features = ["csr", "nightly"] }
+leptos-router = { version = "0.5.2", features = ["csr", "nightly"] }
+leptos-use = { version = "0.8.2" }
