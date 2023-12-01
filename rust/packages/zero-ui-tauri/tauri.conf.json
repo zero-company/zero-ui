@@ -1,0 +1,49 @@
+{
+  "build": {
+    "beforeDevCommand": { "cwd": "../zero-ui-leptos", "script": "trunk serve" },
+    "beforeBuildCommand": {
+      "cwd": "../zero-ui-leptos",
+      "script": "trunk build"
+    },
+    "devPath": "http://127.0.0.1:1420",
+    "distDir": "../zero-ui-leptos/dist",
+    "withGlobalTauri": true
+  },
+  "package": {
+    "productName": "zero-ui-tauri",
+    "version": "0.1.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "shell": {
+        "all": false,
+        "open": true
+      }
+    },
+    "bundle": {
+      "active": true,
+      "targets": "all",
+      "identifier": "com.zero.ui",
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ]
+    },
+    "security": {
+      "csp": null
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "resizable": true,
+        "title": "zero-ui-tauri",
+        "width": 800,
+        "height": 600
+      }
+    ]
+  }
+}
