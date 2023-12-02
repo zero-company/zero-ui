@@ -7278,6 +7278,7 @@ dependencies = [
  "leptos_router",
  "log",
  "trunk",
+ "zero-ui",
 ]
 
 [[package]]

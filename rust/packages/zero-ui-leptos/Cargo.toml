@@ -4,6 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+zero-ui = { path = "../zero-ui" }
 leptos = { version = "0.5.2", features = ["csr", "nightly"] }
 leptos_meta = { version = "0.5.2", features = ["csr", "nightly"] }
 leptos_router = { version = "0.5.2", features = ["csr", "nightly"] }

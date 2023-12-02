@@ -1,7 +1,7 @@
-use crate::prelude::{AppContainer, Text, TextVariant};
 use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
+use zero_ui::prelude::{AppContainer, Text, TextVariant};
 
 #[component]
 pub fn App() -> impl IntoView {
@@ -27,7 +27,7 @@ fn Home() -> impl IntoView {
                 <p class="px-10 pb-10 text-left">
                     "Tailwind will scan your Rust files for Tailwind class names and compile them into a CSS file."
                 </p>
-                <Text variant={TextVariant::H2}>"Text"</Text>
+                <Text variant=TextVariant::H2>"Text"</Text>
                 <button
                     class="bg-amber-600 hover:bg-sky-700 px-5 py-3 text-white rounded-lg"
                     on:click=move |_| set_count.update(|count| *count += 1)

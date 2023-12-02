@@ -4,7 +4,7 @@ pub mod app_container;
 pub mod text;
 
 pub mod prelude {
-    pub use super::app_container::AppContainer;
+    pub use super::app_container::*;
     pub use super::text::*;
 }
 
