@@ -37,6 +37,14 @@ cargo tauri icon [INPUT]
 <INPUT>    Path to the source icon (png, 1024x1024px with transparency) [default: ./app-icon.png]
 ```
 
+### Deploy
+
+Cloudflare Pages trunk build command
+
+```
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs/ | sh -s -- -y; source "$HOME/.cargo/env";rustup target add wasm32-unknown-unknown;cargo install --locked trunk;trunk build --release
+```
+
 ### Setup LeptosFMT
 
 ```
