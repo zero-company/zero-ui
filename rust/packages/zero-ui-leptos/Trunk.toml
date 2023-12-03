@@ -1,9 +1,13 @@
-[[hooks]]
-stage = "pre_build"
-command = "sh"
-command_arguments = ["-c", "npx tailwindcss -i index.css -o style/output.css"]
+# [[hooks]]
+# stage = "pre_build"
+# command = "sh"
+# command_arguments = ["-c", "npx tailwindcss -i index.css -o style/output.css"]
 
 [serve]
 address = "127.0.0.1"
 port = 1420
 open = false
+
+[build]
+filehash = false
+release = true
