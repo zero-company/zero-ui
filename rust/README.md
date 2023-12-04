@@ -25,7 +25,7 @@ trunk serve --open
 unpack command:
 
 ```
-cargo run --package zero-ui-leptos --bin unpack
+cargo run --package zero-ui-leptos --bin unpack-zero-ui-assets
 ```
 
 ### zero-ui-tauri
