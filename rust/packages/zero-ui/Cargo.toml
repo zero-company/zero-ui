@@ -15,6 +15,11 @@ keywords = ["zero", "leptos", "components", "component-library"]
 [dependencies]
 leptos = { workspace = true }
 leptos-use = { workspace = true }
+anyhow = { version = "1.0.75" }
+thiserror = { version = "1.0.50" }
+tar = { version = "0.4.40" }
+fs_extra = { version = "1.3.0" }
+include_dir = { version = "0.7.3" }
 
 [features]
 csr = ["leptos/csr"]

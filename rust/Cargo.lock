@@ -7262,8 +7262,13 @@ checksum = "1367295b8f788d371ce2dbc842c7b709c73ee1364d30351dd300ec2203b12377"
 name = "zero-ui"
 version = "0.1.1"
 dependencies = [
+ "anyhow",
+ "fs_extra",
+ "include_dir",
  "leptos",
  "leptos-use",
+ "tar",
+ "thiserror",
 ]
 
 [[package]]
