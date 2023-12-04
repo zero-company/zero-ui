@@ -22,6 +22,12 @@ start command:
 trunk serve --open
 ```
 
+unpack command:
+
+```
+cargo run --package zero-ui-leptos --bin unpack
+```
+
 ### zero-ui-tauri
 
 start command
