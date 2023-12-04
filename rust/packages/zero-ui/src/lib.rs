@@ -1,5 +1,6 @@
 #[path = "unpack-assets.rs"]
 pub mod unpack_assets;
+pub use unpack_assets::unpack_assets;
 
 #[path = "lib/app-container.rs"]
 pub mod app_container;
