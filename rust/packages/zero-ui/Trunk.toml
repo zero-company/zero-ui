@@ -1,0 +1,7 @@
+# Docs: https://github.com/thedodd/trunk/blob/master/Trunk.toml
+[build]
+filehash = false
+release = true
+
+# [[hooks]]
+# stage = "post_build"
