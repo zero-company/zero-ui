@@ -10,7 +10,8 @@ script = ["echo hello"]
 description = "Generate tailwind css for zero-ui"
 install_crate = "trunk"
 command = "trunk"
-args = []
+args = ["build"]
+cwd = "packages/zero-ui"
 
 [tasks.build-zero-ui-leptos]
 description = "Build zero-ui CSR docs"
