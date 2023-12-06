@@ -1,0 +1,30 @@
+# Docs: https://github.com/sagiegurari/cargo-make#usage-workspace-support-skip-include-members
+[config]
+default_to_workspace = false # cli: cargo make --no-workspace run
+
+[tasks.hello]
+script = ["echo hello"]
+# workspace = false
+
+[tasks.build-zero-ui-tailwind]
+description = "Generate tailwind css for zero-ui"
+install_crate = "trunk"
+command = "trunk"
+args = []
+
+[tasks.build-zero-ui-leptos]
+description = "Build zero-ui CSR docs"
+install_crate = "trunk"
+command = "trunk"
+args = ["build"]
+cwd = "packages/zero-ui-leptos"
+
+[tasks.unpack-zero-ui-leptos]
+description = "Unpack zero-ui assets in zero-ui-leptos"
+command = "cargo"
+args = [
+  "run",
+  "--bin unpack-zero-ui-assets",
+  "--",
+  "--workspace zero-ui-leptos",
+]
