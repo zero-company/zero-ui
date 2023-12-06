@@ -1,3 +1,6 @@
+# Docs: https://github.com/thedodd/trunk/blob/master/Trunk.toml
+
+# Build tailwind css via hooks
 # [[hooks]]
 # stage = "pre_build"
 # command = "sh"
