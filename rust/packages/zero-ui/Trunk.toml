@@ -3,5 +3,7 @@
 filehash = false
 release = true
 
-# [[hooks]]
-# stage = "post_build"
+[[hooks]]
+stage = "post_build"
+command = "sh"
+command_arguments = ["-c", ""]

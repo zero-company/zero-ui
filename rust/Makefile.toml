@@ -1,6 +1,7 @@
 # Docs: https://github.com/sagiegurari/cargo-make#usage-workspace-support-skip-include-members
 [config]
-default_to_workspace = false # cli: cargo make --no-workspace run
+default_to_workspace = false
+# cli: cargo make --no-workspace run
 
 [tasks.hello]
 script = ["echo hello"]
