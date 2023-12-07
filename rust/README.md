@@ -51,12 +51,16 @@ Cloudflare Pages trunk build command
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs/ | sh -s -- -y; source "$HOME/.cargo/env";rustup target add wasm32-unknown-unknown;cargo install --locked trunk;trunk build --release
 ```
 
-### Setup Cargo Make
+### Setup Tools
 
-force upgrade to latest version
+`--force` upgrades to latest version
 
 ```
 cargo install --force cargo-make
+```
+
+```
+cargo install --force cargo-watch
 ```
 
 ### Setup LeptosFMT

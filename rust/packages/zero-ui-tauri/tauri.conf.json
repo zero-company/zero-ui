@@ -1,6 +1,9 @@
 {
   "build": {
-    "beforeDevCommand": { "cwd": "../zero-ui-leptos", "script": "trunk serve" },
+    "beforeDevCommand": {
+      "cwd": "../zero-ui-leptos",
+      "script": "cargo watch -- trunk serve"
+    },
     "beforeBuildCommand": {
       "cwd": "../zero-ui-leptos",
       "script": "trunk build"
