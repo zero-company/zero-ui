@@ -3,6 +3,11 @@ name = "zero-ui-leptos"
 version = "0.1.0"
 edition = "2021"
 
+# Store binary outside of bin
+# [[bin]]
+# name = "unpack-zero-ui-assets"
+# path = "src/unpack-zero-ui-assets.rs"
+
 [dependencies]
 zero-ui = { path = "../zero-ui" }
 leptos = { version = "0.5.2", features = ["csr", "nightly"] }
@@ -10,7 +15,6 @@ leptos_meta = { version = "0.5.2", features = ["csr", "nightly"] }
 leptos_router = { version = "0.5.2", features = ["csr", "nightly"] }
 log = "0.4.20"
 gloo-net = { version = "0.4", features = ["http"] }
-trunk = { version = "0.17.5" }
 # dependecies for client (enable when csr or hydrate set)
 # wasm-bindgen = { version = "0.2" }
 console_log = { version = "1" }
