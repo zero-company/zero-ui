@@ -26,13 +26,10 @@ install_crate = "trunk"
 command = "trunk"
 args = ["build"]
 cwd = "packages/zero-ui-leptos"
+dependencies = ["unpack-zero-ui-leptos-css"]
 
-[tasks.unpack-zero-ui-leptos]
+[tasks.unpack-zero-ui-leptos-css]
 description = "Unpack zero-ui assets in zero-ui-leptos"
 command = "cargo"
-args = [
-  "run",
-  "--bin unpack-zero-ui-assets",
-  "--",
-  "--workspace zero-ui-leptos",
-]
+args = ["run", "--bin", "unpack-zero-ui-assets"]
+cwd = "packages/zero-ui-leptos"
