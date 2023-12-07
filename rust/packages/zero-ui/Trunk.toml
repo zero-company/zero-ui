@@ -3,7 +3,10 @@
 filehash = false
 release = true
 
-[[hooks]]
-stage = "post_build"
-command = "cp"
-command_arguments = ["dist/zero-ui.css", "src/assets/css/zero-ui.css"]
+#[[hooks]]
+#stage = "post_build"
+#command = "cp"
+#command_arguments = [
+#  "dist/.stage/zero-ui-base.css",
+#  "src/assets/css/zero-ui.css",
+#]

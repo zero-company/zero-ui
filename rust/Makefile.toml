@@ -7,11 +7,20 @@ default_to_workspace = false
 script = ["echo hello"]
 # workspace = false
 
-[tasks.build-zero-ui-tailwind]
+[tasks.build-zero-ui]
+dependencies = ["build-zero-ui-css", "copy-zero-ui-css"]
+
+[tasks.build-zero-ui-css]
 description = "Generate tailwind css for zero-ui"
 install_crate = "trunk"
 command = "trunk"
 args = ["build"]
+cwd = "packages/zero-ui"
+
+[tasks.copy-zero-ui-css]
+description = "Copy zero-ui css outside of gitignored dist"
+command = "cp"
+args = ["dist/zero-ui-base.css", "src/assets/css/zero-ui.css"]
 cwd = "packages/zero-ui"
 
 [tasks.build-zero-ui-leptos]
