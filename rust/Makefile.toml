@@ -3,12 +3,9 @@
 default_to_workspace = false
 # cli: cargo make --no-workspace run
 
-[tasks.hello]
-script = ["echo hello"]
-# workspace = false
-
 [tasks.build-zero-ui]
 dependencies = ["build-zero-ui-css", "copy-zero-ui-css"]
+# workspace = false
 
 [tasks.build-zero-ui-css]
 description = "Generate tailwind css for zero-ui"
