@@ -3,24 +3,16 @@
 default_to_workspace = false
 # cli: cargo make --no-workspace run
 
-# -------- ZERO-UI --------
+# -------- ZERO-UI-TAURI --------
 
-[tasks.build-zero-ui]
-dependencies = ["build-zero-ui-css", "copy-zero-ui-css"]
-# workspace = false
+[tasks.start]
+description = "Build zero-ui-tauri"
+install_crate = "tauri"
+command = "cargo"
+args = ["tauri", "dev"]
+cwd = "packages/zero-ui-tauri"
+dependencies = ["build-zero-ui-leptos"]
 
-[tasks.build-zero-ui-css]
-description = "Generate tailwind css for zero-ui"
-install_crate = "trunk"
-command = "trunk"
-args = ["build"]
-cwd = "packages/zero-ui"
-
-[tasks.copy-zero-ui-css]
-description = "Copy zero-ui css outside of gitignored dist"
-command = "cp"
-args = ["dist/zero-ui-base.css", "src/assets/css/zero-ui.css"]
-cwd = "packages/zero-ui"
 
 # -------- ZERO-UI-LEPTOS --------
 
@@ -39,4 +31,21 @@ args = ["run", "--bin", "unpack-zero-ui-assets"]
 cwd = "packages/zero-ui-leptos"
 dependencies = ["build-zero-ui"]
 
-# -------- ZERO-UI-TAURI --------
+# -------- ZERO-UI --------
+
+[tasks.build-zero-ui]
+dependencies = ["build-zero-ui-css", "copy-zero-ui-css"]
+# workspace = false
+
+[tasks.build-zero-ui-css]
+description = "Generate tailwind css for zero-ui"
+install_crate = "trunk"
+command = "trunk"
+args = ["build"]
+cwd = "packages/zero-ui"
+
+[tasks.copy-zero-ui-css]
+description = "Copy zero-ui css outside of gitignored dist"
+command = "cp"
+args = ["dist/zero-ui-base.css", "src/assets/css/zero-ui.css"]
+cwd = "packages/zero-ui"
