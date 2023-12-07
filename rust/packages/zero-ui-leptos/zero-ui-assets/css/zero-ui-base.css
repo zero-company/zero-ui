@@ -1,0 +1,61 @@
+@import './highlightjs-vs2015.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .zero-border {
+    @apply border border-zinc-200/[.08];
+  }
+  .zero-divide-x {
+    @apply divide-x divide-zinc-200/[.08];
+  }
+  .zero-divide-y {
+    @apply divide-y divide-zinc-200/[.08];
+  }
+  .text-2xs {
+    font-size: 0.7rem;
+    line-height: 0.95rem;
+  }
+  .text-3xs {
+    font-size: 0.6rem;
+    line-height: 0.75rem;
+  }
+}
+
+@layer base {
+  p,
+  q,
+  a,
+  blockquote,
+  span,
+  button,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply leading-none;
+  }
+
+  a {
+    @apply hover:brightness-150 hover:underline;
+  }
+
+  /* Fix Google Chrome scrollbar */
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-zinc-200/[.08];
+  }
+}
+
+@layer components {
+}
