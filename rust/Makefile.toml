@@ -13,7 +13,6 @@ args = ["tauri", "dev"]
 cwd = "packages/zero-ui-tauri"
 dependencies = ["build-zero-ui-leptos"]
 
-
 # -------- ZERO-UI-LEPTOS --------
 
 [tasks.build-zero-ui-leptos]
