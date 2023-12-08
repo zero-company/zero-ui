@@ -1,8 +1,5 @@
 use leptos::*;
 
-// TODO: Tooltip
-// TODO: Hover style
-
 /// Icon Leptos Component
 ///
 /// Icons index: https://carlosted.github.io/icondata/
