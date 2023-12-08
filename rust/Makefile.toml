@@ -3,10 +3,15 @@
 default_to_workspace = false
 # cli: cargo make --no-workspace run
 
+# -------- ALL --------
+
+[tasks.build]
+dependencies = ["build-zero-ui", "build-zero-ui-leptos"]
+
 # -------- ZERO-UI-TAURI --------
 
 [tasks.start]
-description = "Build zero-ui-tauri"
+description = "Start zero-ui-tauri"
 install_crate = "tauri"
 command = "cargo"
 args = ["tauri", "dev"]
