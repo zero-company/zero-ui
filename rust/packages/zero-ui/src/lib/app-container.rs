@@ -1,5 +1,6 @@
 use leptos::*;
 
+/// AppContainer Leptos Component
 #[component]
 pub fn AppContainer(children: Children) -> impl IntoView {
     view! {

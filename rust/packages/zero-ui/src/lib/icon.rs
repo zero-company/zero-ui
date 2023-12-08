@@ -2,7 +2,8 @@ use leptos::*;
 
 // TODO: Tooltip
 // TODO: Hover style
-/// Icon component
+
+/// Icon Leptos Component
 ///
 /// Icons index: https://carlosted.github.io/icondata/
 ///

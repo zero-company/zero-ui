@@ -11,6 +11,7 @@ pub enum TextVariant {
     Span,
 }
 
+/// Text Leptos Component
 #[component]
 pub fn Text(
     #[prop(into, optional)] variant: Option<TextVariant>,
