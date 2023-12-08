@@ -52,7 +52,7 @@ jobs:
 
       - name: Publish zero-ui
         if: steps.zero-ui-changes.outputs.any_changed == 'true'
-        run: cargo publish --token ${ZERO_PUBLISHONLY_CRATES_TOKEN_V1} --package zero-ui
+        run: cargo publish --token ${ZERO_PUBLISHONLY_CRATES_TOKEN_V1} --package zero-ui --allow-dirty
         env:
           ZERO_PUBLISHONLY_CRATES_TOKEN_V1: ${{ secrets.ZERO_PUBLISHONLY_CRATES_TOKEN_V1 }}
         working-directory: ./rust
