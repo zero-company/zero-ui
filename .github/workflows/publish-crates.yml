@@ -18,18 +18,31 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install stable toolchain
+      - name: Setup Rust
         uses: actions-rs/toolchain@v1
         with:
           profile: minimal
           toolchain: stable
           override: true
+          components: rustfmt
+
+      - name: Add wasm32-unknown-unknown
+        run: rustup target add wasm32-unknown-unknown
+
+      - name: Setup cargo-make
+        uses: davidB/rust-cargo-make@v1
+      
+      - uses: Swatinem/rust-cache@v2
 
       - name: Get zero-ui changes
         id: zero-ui-changes
         uses: tj-actions/changed-files@v34
         with:
           files: rust/packages/zero-ui/**
+
+      - name: Build zero-ui
+        if: steps.zero-ui-changes.outputs.any_changed == 'true'
+        run: cargo make build-zero-ui
 
       - name: Publish zero-ui
         if: steps.zero-ui-changes.outputs.any_changed == 'true'
