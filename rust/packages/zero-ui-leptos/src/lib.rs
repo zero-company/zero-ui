@@ -1,11 +1,11 @@
 pub mod app;
 #[path = "lib/app-container.rs"]
 pub mod app_container;
-#[path = "lib/icon.rs"]
-pub mod icon;
+#[path = "lib/sidebar.rs"]
+pub mod sidebar;
 
 pub mod prelude {
     pub use super::app_container::*;
-    pub use super::icon::*;
+    pub use super::sidebar::*;
 }
 
