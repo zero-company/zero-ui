@@ -43,6 +43,7 @@ jobs:
       - name: Build zero-ui
         if: steps.zero-ui-changes.outputs.any_changed == 'true'
         run: cargo make build-zero-ui
+        working-directory: ./rust
 
       - name: Publish zero-ui
         if: steps.zero-ui-changes.outputs.any_changed == 'true'
