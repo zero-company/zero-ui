@@ -11,7 +11,7 @@ pub fn Icon(
     children: Children,
 ) -> impl IntoView {
     view! {
-        <div id=id id="Icon" class=class style=style>
+        <div id="Icon" id=id class=class style=style>
             {children()}
         </div>
     }
