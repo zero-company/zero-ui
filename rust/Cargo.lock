@@ -2216,6 +2216,16 @@ version = "0.0.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f41f2deec9249d16ef6b1a8442fbe16013f67053797052aa0b7d2f5ebd0f0098"
 dependencies = [
+ "icondata_bs",
+ "icondata_core",
+]
+
+[[package]]
+name = "icondata_bs"
+version = "0.0.8"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3a1eeaedae6788b08308e1b050eeddaffa62dd5f2368469ef980c8e0e75837e3"
+dependencies = [
  "icondata_core",
 ]
 
@@ -6688,6 +6698,7 @@ dependencies = [
  "console_log",
  "gloo-net 0.4.0",
  "leptos",
+ "leptos_icons",
  "leptos_meta",
  "leptos_router",
  "log",

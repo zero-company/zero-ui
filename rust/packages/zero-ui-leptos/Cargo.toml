@@ -19,3 +19,4 @@ gloo-net = { version = "0.4", features = ["http"] }
 # wasm-bindgen = { version = "0.2" }
 console_log = { version = "1" }
 console_error_panic_hook = { version = "0.1" }
+leptos_icons = { version = "0.1.0", features = ["BsFolder"] }

@@ -11,6 +11,7 @@ pub mod text;
 
 pub mod prelude {
     pub use super::app_container::*;
+    pub use super::icon::*;
     pub use super::text::*;
 }
 
