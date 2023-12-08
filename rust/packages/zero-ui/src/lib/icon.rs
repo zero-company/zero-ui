@@ -2,12 +2,14 @@ use leptos::*;
 
 // TODO: Tooltip
 // TODO: Hover style
-/// Icon
+/// Icon component
+///
+/// Icons index: https://carlosted.github.io/icondata/
+///
+/// Documentation: https://github.com/Carlosted/leptos-icons
 #[component]
 pub fn Icon(
-    /// leptos_icons: https://carlosted.github.io/icondata/
-    #[prop(into)]
-    icon: leptos_icons::Icon,
+    #[prop(into)] icon: leptos_icons::Icon,
     #[prop(into, optional)] id: Option<AttributeValue>,
     #[prop(into, optional)] class: Option<AttributeValue>,
     #[prop(into, optional)] style: Option<AttributeValue>,
