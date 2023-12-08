@@ -24,7 +24,7 @@ pub fn Icon(
     })
     .into_view();
     view! {
-        <div id="Icon" class=class style=style aria_label=aria_label>
+        <div id=id class=class style=style aria_label=aria_label>
             {child}
         </div>
     }
