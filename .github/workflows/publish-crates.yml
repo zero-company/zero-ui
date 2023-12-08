@@ -34,7 +34,7 @@ jobs:
       
       - uses: Swatinem/rust-cache@v2
 
-      - name: Install Trunk
+      - name: Setup Trunk
         uses: jetli/trunk-action@v0.4.0
         with:
           version: "latest"
