@@ -34,6 +34,11 @@ jobs:
       
       - uses: Swatinem/rust-cache@v2
 
+      - name: Install Trunk
+        uses: jetli/trunk-action@v0.4.0
+        with:
+          version: "latest"
+
       - name: Get zero-ui changes
         id: zero-ui-changes
         uses: tj-actions/changed-files@v34
