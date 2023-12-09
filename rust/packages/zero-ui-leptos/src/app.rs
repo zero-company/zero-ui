@@ -24,7 +24,10 @@ fn Home() -> impl IntoView {
 
     view! {
         <AppContainer>
-            <AppLayout sidebar=|| view! { <Icon icon=BsIcon::BsFolder style="color: orange"/> }/>
+            <AppLayout
+                sidebar=|| view! { <Icon icon=BsIcon::BsFolder style="color: orange"/> }
+                page=|| view! { <Icon icon=BsIcon::BsFolder style="color: orange"/> }
+            />
 
             <div class="my-0 mx-auto max-w-3xl text-center">
                 <h2 class="p-6 text-4xl">"Under Development"</h2>
