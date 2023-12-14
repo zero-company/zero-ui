@@ -1,16 +1,17 @@
 use leptos::*;
 
 #[component]
-pub fn AppLayout<F, G, IV>(sidebar: F, page: G) -> impl IntoView
+pub fn AppLayout<H, HIV, S, SIV>(header: H, sidebar: S) -> impl IntoView
 where
-    F: Fn() -> IV,
-    G: Fn() -> IV,
-    IV: IntoView,
+    H: Fn() -> HIV,
+    HIV: IntoView,
+    S: Fn() -> SIV,
+    SIV: IntoView,
 {
     view! {
         <div id="AppLayout" class="flex ">
+            <div id="HeaderContainer">{header()}</div>
             <div id="SidebarContainer">{sidebar()}</div>
-            <div id="ContentContainer">{page()}</div>
         </div>
     }
 }
