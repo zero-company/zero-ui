@@ -1,6 +1,6 @@
 use crate::prelude::{AppLayout, Sidebar};
 use leptos::*;
-use leptos_icons::BsIcon;
+use leptos_icons::*;
 use leptos_meta::*;
 use leptos_router::*;
 use zero_ui::prelude::{AppContainer, Icon};
@@ -28,12 +28,16 @@ fn Home() -> impl IntoView {
                 header=|| {
                     view! {
                         <div>
-                            <Icon icon=BsIcon::BsFolder style="color: orange"/>
+                            <Icon icon=FiIcon::FiSearch/>
+                            <Icon icon=FiIcon::FiUser/>
+                            <Icon icon=FiIcon::FiMessageCircle/>
+                            <Icon icon=FiIcon::FiSettings/>
+
                         </div>
                     }
                 }
 
-                sidebar=|| view! { <Icon icon=BsIcon::BsFolder style="color: orange"/> }
+                sidebar=|| view! { <Icon icon=FiIcon::FiSearch style="color: orange"/> }
             />
 
             <div class="my-0 mx-auto max-w-3xl text-center">
