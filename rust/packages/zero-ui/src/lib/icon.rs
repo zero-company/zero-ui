@@ -9,7 +9,7 @@ use leptos::*;
 pub fn Icon(
     #[prop(into)] icon: leptos_icons::Icon,
     #[prop(into, optional)] id: Option<AttributeValue>,
-    #[prop(into, optional)] class: Option<AttributeValue>,
+    #[prop(into, optional)] class: Option<MaybeSignal<String>>,
     #[prop(into, optional)] style: Option<AttributeValue>,
     #[prop(into, optional)] aria_label: Option<AttributeValue>,
 ) -> impl IntoView {
@@ -21,8 +21,16 @@ pub fn Icon(
         style: None,
     })
     .into_view();
+
+    let default_class = "h-9 w-9 text-xl flex justify-center items-center";
+
+    let parsed_class = match class {
+        Some(signal) => signal.get(),
+        None => default_class.into(),
+    };
+
     view! {
-        <div id=id class=class style=style aria_label=aria_label>
+        <div id=id class=parsed_class style=style aria_label=aria_label>
             {child}
         </div>
     }

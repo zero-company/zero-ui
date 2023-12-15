@@ -10,8 +10,9 @@ where
 {
     view! {
         <div id="AppLayout" class="flex ">
-            <div id="HeaderContainer">{header()}</div>
             <div id="SidebarContainer">{sidebar()}</div>
+            <div id="HeaderContainer">{header()}</div>
+
         </div>
     }
 }

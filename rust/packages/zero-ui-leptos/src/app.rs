@@ -25,7 +25,7 @@ fn Home() -> impl IntoView {
     view! {
         <AppContainer>
             <AppLayout
-                header=|| {
+                sidebar=|| {
                     view! {
                         <div>
                             <Icon icon=FiIcon::FiSearch/>
@@ -37,7 +37,7 @@ fn Home() -> impl IntoView {
                     }
                 }
 
-                sidebar=|| view! { <Icon icon=FiIcon::FiSearch style="color: orange"/> }
+                header=|| view! { <h2 class="p-6 text-4xl">"Header"</h2> }
             />
 
             <div class="my-0 mx-auto max-w-3xl text-center">
