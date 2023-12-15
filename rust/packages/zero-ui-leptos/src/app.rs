@@ -1,9 +1,9 @@
-use crate::prelude::{AppLayout, Sidebar};
+use crate::prelude::Sidebar;
 use leptos::*;
 use leptos_icons::*;
 use leptos_meta::*;
 use leptos_router::*;
-use zero_ui::prelude::{AppContainer, Icon};
+use zero_ui::prelude::{AppContainer, AppLayout, Icon};
 
 #[component]
 pub fn App() -> impl IntoView {
