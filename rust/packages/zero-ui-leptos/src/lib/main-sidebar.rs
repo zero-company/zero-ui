@@ -1,7 +1,7 @@
 use leptos::*;
 
 #[component]
-pub fn Sidebar(
+pub fn MainSidebar(
     #[prop(into, optional)] id: Option<AttributeValue>,
     #[prop(into, optional)] class: Option<AttributeValue>,
     #[prop(into, optional)] style: Option<AttributeValue>,
