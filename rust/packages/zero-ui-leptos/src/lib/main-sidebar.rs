@@ -1,16 +1,24 @@
 use leptos::*;
+use leptos_icons::*;
+use zero_ui::prelude::{Icon, Sidebar};
 
 #[component]
-pub fn MainSidebar(
-    #[prop(into, optional)] id: Option<AttributeValue>,
-    #[prop(into, optional)] class: Option<AttributeValue>,
-    #[prop(into, optional)] style: Option<AttributeValue>,
-    children: Children,
-) -> impl IntoView {
+pub fn MainSidebar() -> impl IntoView {
     view! {
-        <div id=id class=class style=style>
-            {children()}
-        </div>
+        <Sidebar
+            top_icons=|| {
+                view! {
+                    <Icon icon=FiIcon::FiSearch/>
+                    <Icon icon=FiIcon::FiUser/>
+                    <Icon icon=FiIcon::FiMessageCircle/>
+                    <Icon icon=FiIcon::FiSettings/>
+                }
+            }
+
+            bottom_icons=|| {
+                view! { <p>btm</p> }
+            }
+        />
     }
 }
 

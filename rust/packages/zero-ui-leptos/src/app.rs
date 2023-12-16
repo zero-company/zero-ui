@@ -1,9 +1,8 @@
 use crate::prelude::MainSidebar;
 use leptos::*;
-use leptos_icons::*;
 use leptos_meta::*;
 use leptos_router::*;
-use zero_ui::prelude::{AppContainer, AppLayout, Icon};
+use zero_ui::prelude::{AppContainer, AppLayout};
 
 #[component]
 pub fn App() -> impl IntoView {
@@ -25,24 +24,12 @@ fn Home() -> impl IntoView {
     view! {
         <AppContainer>
             <AppLayout
-                sidebar=|| {
-                    view! {
-                        <div>
-                            <Icon icon=FiIcon::FiSearch/>
-                            <Icon icon=FiIcon::FiUser/>
-                            <Icon icon=FiIcon::FiMessageCircle/>
-                            <Icon icon=FiIcon::FiSettings/>
-
-                        </div>
-                    }
-                }
-
+                sidebar=|| view! { <MainSidebar/> }
                 header=|| view! { <h2 class="p-6 text-4xl">"Header"</h2> }
             />
 
             <div class="my-0 mx-auto max-w-3xl text-center">
                 <h2 class="p-6 text-4xl">"Under Development"</h2>
-                <MainSidebar id="Sidebar">"Text2"</MainSidebar>
                 <button
                     class="bg-amber-600 hover:bg-sky-700 px-5 py-3 text-white rounded-lg"
                     on:click=move |_| set_count.update(|count| *count += 1)
