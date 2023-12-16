@@ -7,16 +7,16 @@ pub fn MainSidebar() -> impl IntoView {
     view! {
         <Sidebar
             top_icons=|| {
+                view! { <Icon icon=FiIcon::FiSearch/> }
+            }
+
+            bottom_icons=|| {
                 view! {
                     <Icon icon=FiIcon::FiSearch/>
                     <Icon icon=FiIcon::FiUser/>
                     <Icon icon=FiIcon::FiMessageCircle/>
                     <Icon icon=FiIcon::FiSettings/>
                 }
-            }
-
-            bottom_icons=|| {
-                view! { <p>btm</p> }
             }
         />
     }
