@@ -1,6 +1,4 @@
-use crate::prelude::Icon;
 use leptos::*;
-use leptos_icons::*;
 
 #[component]
 pub fn Sidebar<T, TIV, B, BIV>(
