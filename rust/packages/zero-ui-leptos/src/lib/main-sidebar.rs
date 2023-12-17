@@ -7,15 +7,19 @@ pub fn MainSidebar() -> impl IntoView {
     view! {
         <Sidebar
             top_icons=|| {
-                view! {}
+                view! {
+                    <div inner_html=include_str!(
+                        "./../../zero-ui-assets/icons/zero-logo-v1.svg",
+                    )></div>
+                }
             }
 
             bottom_icons=|| {
                 view! {
-                    <Icon icon=FiIcon::FiSearch/>
-                    <Icon icon=FiIcon::FiUser/>
-                    <Icon icon=FiIcon::FiMessageCircle/>
-                    <Icon icon=FiIcon::FiSettings/>
+                    <Icon icon=FiIcon::FiSearch size="20"/>
+                    <Icon icon=FiIcon::FiUser size="20"/>
+                    <Icon icon=FiIcon::FiMessageCircle size="20"/>
+                    <Icon icon=FiIcon::FiSettings size="20"/>
                 }
             }
         />

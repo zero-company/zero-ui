@@ -12,17 +12,18 @@ pub fn Icon(
     #[prop(into, optional)] class: Option<MaybeSignal<String>>,
     #[prop(into, optional)] style: Option<AttributeValue>,
     #[prop(into, optional)] aria_label: Option<AttributeValue>,
+    #[prop(into, optional)] size: Option<MaybeSignal<String>>,
 ) -> impl IntoView {
     let child = leptos_icons::Icon(leptos_icons::IconProps {
         icon: icon.into(),
-        width: None,
-        height: None,
+        width: size.clone(),
+        height: size.clone(),
         class: None,
         style: None,
     })
     .into_view();
 
-    let default_class = "h-9 w-9 text-xl flex justify-center items-center";
+    let default_class = "h-9 w-9 flex justify-center items-center";
 
     let parsed_class = match class {
         Some(signal) => signal.get(),
