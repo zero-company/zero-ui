@@ -7,7 +7,7 @@ use leptos::*;
 /// Documentation: https://github.com/Carlosted/leptos-icons
 #[component]
 pub fn Icon(
-    #[prop(into)] icon: leptos_icons::Icon,
+    #[prop(into)] leptos_icons_icon: leptos_icons::Icon,
     #[prop(into, optional)] id: Option<AttributeValue>,
     #[prop(into, optional)] class: Option<MaybeSignal<String>>,
     #[prop(into, optional)] style: Option<AttributeValue>,
@@ -15,7 +15,7 @@ pub fn Icon(
     #[prop(into, optional)] size: Option<MaybeSignal<String>>,
 ) -> impl IntoView {
     let child = leptos_icons::Icon(leptos_icons::IconProps {
-        icon: icon.into(),
+        icon: leptos_icons_icon.into(),
         width: size.clone(),
         height: size.clone(),
         class: None,
