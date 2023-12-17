@@ -7,7 +7,7 @@ pub fn MainSidebar() -> impl IntoView {
     view! {
         <Sidebar
             top_icons=|| {
-                view! { <Icon icon=FiIcon::FiSearch/> }
+                view! {}
             }
 
             bottom_icons=|| {

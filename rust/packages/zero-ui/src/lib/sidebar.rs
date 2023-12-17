@@ -41,7 +41,7 @@ where
                     ></path>
                 </svg>
             </div>
-            <Icon icon=FiIcon::FiSearch/>
+
             {top_icons()}
             {bottom_icons()}
         </div>
