@@ -14,16 +14,10 @@ where
     B: Fn() -> BIV,
     BIV: IntoView,
 {
-    /*
-    let parsed_top_icons = match top_icons {
-        Some(icons) => icons,
-        None => "".into(),
-    };
-     */
-
     view! {
-        <div id=id class=class style=style>
+        <div id="Sidebar" class="flex flex-col h-screen" style=style>
             {top_icons()}
+            <div class="grow"></div>
             {bottom_icons()}
         </div>
     }

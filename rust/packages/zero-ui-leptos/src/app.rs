@@ -25,7 +25,7 @@ fn Home() -> impl IntoView {
         <AppContainer>
             <AppLayout
                 sidebar=|| view! { <MainSidebar/> }
-                header=|| view! { <h2 class="p-6 text-4xl">"Header"</h2> }
+                header=|| view! { <h2 class="p-1 text-sm">"zero-ui"</h2> }
             />
 
             <div class="my-0 mx-auto max-w-3xl text-center">
