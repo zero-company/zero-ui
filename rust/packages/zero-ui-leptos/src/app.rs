@@ -30,6 +30,7 @@ fn Home() -> impl IntoView {
 
             <div class="my-0 mx-auto max-w-3xl text-center">
                 <h2 class="p-6 text-4xl">"Under Development"</h2>
+
                 <button
                     class="bg-amber-600 hover:bg-sky-700 px-5 py-3 text-white rounded-lg"
                     on:click=move |_| set_count.update(|count| *count += 1)
