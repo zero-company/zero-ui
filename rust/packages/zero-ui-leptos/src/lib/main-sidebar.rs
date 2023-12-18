@@ -17,10 +17,10 @@ pub fn MainSidebar() -> impl IntoView {
             bottom_icons=|| {
                 view! {
                     <Icon size="20"/>
-                    //<Icon leptos_icons_icon=FiIcon::FiSearch size="20"/>
-                    //<Icon leptos_icons_icon=FiIcon::FiUser size="20"/>
-                    //<Icon leptos_icons_icon=FiIcon::FiMessageCircle size="20"/>
-                    //<Icon leptos_icons_icon=FiIcon::FiSettings size="20"/>
+                    <Icon leptos_icons_icon=Icon::from(FiIcon::FiSearch) size="20"/>
+                    <Icon leptos_icons_icon=Icon::from(FiIcon::FiUser) size="20"/>
+                    <Icon leptos_icons_icon=Icon::from(FiIcon::FiMessageCircle) size="20"/>
+                    <Icon leptos_icons_icon=Icon::from(FiIcon::FiSettings) size="20"/>
                 }
             }
         />
