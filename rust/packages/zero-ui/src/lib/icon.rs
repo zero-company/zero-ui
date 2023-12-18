@@ -9,6 +9,7 @@ use leptos::*;
 pub fn Icon(
     #[prop(into, optional)] leptos_icons_icon: Option<MaybeSignal<leptos_icons::Icon>>,
     #[prop(into, optional)] svg_child: Option<MaybeSignal<&'static str>>,
+    #[prop(into, optional)] svg_viewbox: Option<MaybeSignal<String>>,
     #[prop(into, optional)] id: Option<AttributeValue>,
     #[prop(into, optional)] class: Option<MaybeSignal<String>>,
     #[prop(into, optional)] style: Option<AttributeValue>,
@@ -37,15 +38,14 @@ pub fn Icon(
                 xmlns="http://www.w3.org/2000/svg"
                 width=size.clone().unwrap()
                 height=size.clone().unwrap()
-                viewBox="0 0 24 24"
+                viewBox=svg_viewbox.clone().unwrap_or("0 0 24 24".into())
                 fill="none"
                 stroke="currentColor"
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-            >
-                {s.get()}
-            </svg>
+                inner_html=s.get()
+            ></svg>
         }
         .into_view(),
         (None, None) => view! {

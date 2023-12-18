@@ -8,11 +8,9 @@ pub fn MainSidebar() -> impl IntoView {
         <Sidebar
             top_icons=|| {
                 view! {
-                    <div inner_html=include_str!(
-                        "./../../zero-ui-assets/icons/zero-logo-v1.svg",
-                    )></div>
                     <Icon
                         size="20"
+                        svg_viewbox="0 0 320 320"
                         svg_child=r###"<path
                         fill-rule="evenodd"
                         clip-rule="evenodd"
