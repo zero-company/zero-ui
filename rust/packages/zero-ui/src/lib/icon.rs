@@ -35,8 +35,8 @@ pub fn Icon(
         (Some(_), Some(s)) | (None, Some(s)) => view! {
             <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
+                width=size.clone().unwrap()
+                height=size.clone().unwrap()
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -51,8 +51,8 @@ pub fn Icon(
         (None, None) => view! {
             <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
+                width=size.clone().unwrap()
+                height=size.clone().unwrap()
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"

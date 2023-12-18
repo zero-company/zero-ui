@@ -11,6 +11,15 @@ pub fn MainSidebar() -> impl IntoView {
                     <div inner_html=include_str!(
                         "./../../zero-ui-assets/icons/zero-logo-v1.svg",
                     )></div>
+                    <Icon
+                        size="20"
+                        svg_child=r###"<path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M160 320C248.366 320 320 248.366 320 160C320 71.6344 248.366 0 160 0C71.6344 0 0 71.6344 0 160C0 248.366 71.6344 320 160 320ZM160 272C221.856 272 272 221.856 272 160C272 98.1441 221.856 48 160 48C98.1441 48 48 98.1441 48 160C48 221.856 98.1441 272 160 272Z"
+                        fill="currentColor"
+                        ></path>"###
+                    />
                 }
             }
 
