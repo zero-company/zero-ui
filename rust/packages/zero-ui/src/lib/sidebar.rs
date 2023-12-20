@@ -17,12 +17,18 @@ where
     view! {
         <div
             id=id.unwrap_or("Sidebar".to_string())
-            class=class.unwrap_or("flex flex-col min-h-screen overflow-y-auto".to_string())
+            class=class.unwrap_or("flex flex-row zero-divide-x".to_string())
             style=style
         >
-            {top_icons()}
-            <div class="grow"></div>
-            {bottom_icons()}
+            <div id="SidebarIcons" class="flex flex-col min-h-screen overflow-y-auto">
+                {top_icons()}
+                <div class="grow"></div>
+                {bottom_icons()}
+            </div>
+            <div id="SidebarMenu" class="flex flex-col min-h-screen overflow-y-auto">
+                <p class="p-1">"zeru-ui"</p>
+            </div>
+
         </div>
     }
 }
