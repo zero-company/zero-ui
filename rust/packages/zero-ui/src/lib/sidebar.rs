@@ -17,7 +17,7 @@ where
     view! {
         <div
             id=id.unwrap_or("Sidebar".to_string())
-            class=class.unwrap_or("flex flex-row zero-divide-x".to_string())
+            class=class.unwrap_or("flex flex-row zero-divide-x w-64".to_string())
             style=style
         >
             <div id="SidebarIcons" class="flex flex-col min-h-screen overflow-y-auto">
