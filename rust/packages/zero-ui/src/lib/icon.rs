@@ -16,13 +16,6 @@ pub fn Icon(
     #[prop(into, optional)] aria_label: Option<AttributeValue>,
     #[prop(into, optional)] size: Option<MaybeSignal<String>>,
 ) -> impl IntoView {
-    let default_class = "h-9 w-9 flex justify-center items-center";
-
-    let parsed_class = match class {
-        Some(signal) => signal.get(),
-        None => default_class.into(),
-    };
-
     let svg = match (leptos_icons_icon, svg_child) {
         (Some(i), None) => leptos_icons::Icon(leptos_icons::IconProps {
             icon: i.get().into(),
@@ -66,6 +59,13 @@ pub fn Icon(
             </svg>
         }
         .into_view(),
+    };
+
+    let default_class = "h-9 w-9 flex justify-center items-center hover:brightness-150";
+
+    let parsed_class = match class {
+        Some(signal) => signal.get(),
+        None => default_class.into(),
     };
 
     view! {
