@@ -27,7 +27,7 @@ fn Home() -> impl IntoView {
                 sidebar=|| view! { <MainSidebar/> }
                 header=|| view! { <h2 class="p-1 text-sm">"zero-ui"</h2> }
             />
-
+            /* 
             <div class="my-0 mx-auto max-w-3xl text-center">
                 <h2 class="p-6 text-4xl">"Under Development"</h2>
 
@@ -41,6 +41,8 @@ fn Home() -> impl IntoView {
                     " | visitors"
                 </button>
             </div>
+            */
+            
         </AppContainer>
     }
 }

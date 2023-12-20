@@ -9,8 +9,8 @@ where
     SIV: IntoView,
 {
     view! {
-        <div id="AppLayout" class="flex zero-divide-x">
-            <div id="SidebarContainer" class="h-screen">
+        <div id="AppLayout" class="flex h-screen w-screen zero-divide-x">
+            <div id="SidebarContainer" class="flex h-screen">
                 {sidebar()}
             </div>
             <div id="HeaderContainer">{header()}</div>

@@ -61,7 +61,7 @@ pub fn Icon(
         .into_view(),
     };
 
-    let default_class = "h-9 w-9 flex justify-center items-center hover:brightness-150";
+    let default_class = "h-9 w-9 flex shrink-0 justify-center items-center hover:brightness-150";
 
     let parsed_class = match class {
         Some(signal) => signal.get(),
