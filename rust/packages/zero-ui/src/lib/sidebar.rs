@@ -2,9 +2,9 @@ use leptos::*;
 
 #[component]
 pub fn Sidebar<T, TIV, B, BIV>(
-    #[prop(into, optional)] id: Option<AttributeValue>,
-    #[prop(into, optional)] class: Option<AttributeValue>,
-    #[prop(into, optional)] style: Option<AttributeValue>,
+    #[prop(into, optional)] id: Option<String>,
+    #[prop(into, optional)] class: Option<String>,
+    #[prop(into, optional)] style: Option<String>,
     top_icons: T,
     bottom_icons: B,
 ) -> impl IntoView
@@ -15,7 +15,11 @@ where
     BIV: IntoView,
 {
     view! {
-        <div id="Sidebar" class="flex flex-col h-screen" style=style>
+        <div
+            id=id.unwrap_or("Sidebar".to_string())
+            class=class.unwrap_or("flex flex-col h-screen".to_string())
+            style=style
+        >
             {top_icons()}
             <div class="grow"></div>
             {bottom_icons()}
