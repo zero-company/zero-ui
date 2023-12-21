@@ -4,6 +4,8 @@ use zero_ui::prelude::{Icon, Sidebar};
 
 #[component]
 pub fn MainSidebar() -> impl IntoView {
+    let sidebar_tabs = [(1, 1), (2, 2), (3, 3)];
+
     view! {
         <Sidebar
             top_icons=|| {
@@ -23,7 +25,6 @@ pub fn MainSidebar() -> impl IntoView {
 
             bottom_icons=|| {
                 view! {
-                    <Icon size="20"/>
                     <Icon leptos_icons_icon=Icon::from(FiIcon::FiSearch) size="20"/>
                     <Icon leptos_icons_icon=Icon::from(FiIcon::FiUser) size="20"/>
                     <Icon leptos_icons_icon=Icon::from(FiIcon::FiMessageCircle) size="20"/>
