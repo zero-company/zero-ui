@@ -6,11 +6,11 @@ pub struct SidebarTab<const TLENGTH: usize, const BLENGTH: usize> {
 }
 
 #[component]
-pub fn Sidebar<T, TIV, B, BIV>(
+pub fn Sidebar<T, TIV, B, BIV, const TLENGTH: usize, const BLENGTH: usize>(
     #[prop(into, optional)] id: Option<String>,
     #[prop(into, optional)] class: Option<String>,
     #[prop(into, optional)] style: Option<String>,
-    #[prop(into, optional)] tabs: Option<String>,
+    #[prop(into, optional)] tabs: Option<SidebarTab<TLENGTH, BLENGTH>>,
     top_icons: T,
     bottom_icons: B,
 ) -> impl IntoView
