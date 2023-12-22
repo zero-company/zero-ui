@@ -1,10 +1,16 @@
 use leptos::*;
 
+pub struct SidebarTab<const TLENGTH: usize, const BLENGTH: usize> {
+    pub top: [(View, View); TLENGTH],
+    pub bottom: [(View, View); BLENGTH],
+}
+
 #[component]
 pub fn Sidebar<T, TIV, B, BIV>(
     #[prop(into, optional)] id: Option<String>,
     #[prop(into, optional)] class: Option<String>,
     #[prop(into, optional)] style: Option<String>,
+    #[prop(into, optional)] tabs: Option<String>,
     top_icons: T,
     bottom_icons: B,
 ) -> impl IntoView
