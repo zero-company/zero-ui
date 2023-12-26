@@ -1,10 +1,10 @@
 use leptos::*;
 use leptos_icons::*;
-use zero_ui::prelude::{Icon, Sidebar};
+use zero_ui::prelude::{Icon, Sidebar, SidebarTabs};
 
 #[component]
 pub fn MainSidebar() -> impl IntoView {
-    let sidebar_tabs = [(1, 1), (2, 2), (3, 3)];
+    //let sidebar_tabs = [(view! {}.into_view(), view! {}.into_view())];
 
     view! {
         <Sidebar

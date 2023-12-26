@@ -1,16 +1,22 @@
 use leptos::*;
 
-pub struct SidebarTab<const TLENGTH: usize, const BLENGTH: usize> {
-    pub top: [(View, View); TLENGTH],
-    pub bottom: [(View, View); BLENGTH],
+pub struct SidebarTabs<const TLENGTH: usize = 0, const BLENGTH: usize = 0> {
+    pub top: Option<[(View, View); TLENGTH]>,
+    pub bottom: Option<[(View, View); BLENGTH]>,
 }
 
+// impl Into for SidebarTabs<T> {}
+
 #[component]
-pub fn Sidebar<T, TIV, B, BIV, const TLENGTH: usize, const BLENGTH: usize>(
+pub fn Sidebar<T, TIV, B, BIV /*, const TLENGTH: usize, const BLENGTH: usize*/>(
     #[prop(into, optional)] id: Option<String>,
     #[prop(into, optional)] class: Option<String>,
     #[prop(into, optional)] style: Option<String>,
-    #[prop(into, optional)] tabs: Option<SidebarTab<TLENGTH, BLENGTH>>,
+    /*
+    #[prop(into, optional, into, default=Some(SidebarTabs{top: None, bottom: None}))] tabs: Option<
+        SidebarTabs<TLENGTH, BLENGTH>,
+    >,
+    */
     top_icons: T,
     bottom_icons: B,
 ) -> impl IntoView
