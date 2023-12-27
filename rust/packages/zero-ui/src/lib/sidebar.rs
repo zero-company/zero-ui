@@ -8,7 +8,7 @@ pub struct SidebarTabs<const TLENGTH: usize = 0, const BLENGTH: usize = 0> {
 // impl Into for SidebarTabs<T> {}
 
 #[component]
-pub fn Sidebar<T, TIV, B, BIV /*, const TLENGTH: usize, const BLENGTH: usize*/>(
+pub fn Sidebar<T, TIV, B, BIV, M, MIV /*, const TLENGTH: usize, const BLENGTH: usize*/>(
     #[prop(into, optional)] id: Option<String>,
     #[prop(into, optional)] class: Option<String>,
     #[prop(into, optional)] style: Option<String>,
@@ -19,12 +19,15 @@ pub fn Sidebar<T, TIV, B, BIV /*, const TLENGTH: usize, const BLENGTH: usize*/>(
     */
     top_icons: T,
     bottom_icons: B,
+    menu: M,
 ) -> impl IntoView
 where
     T: Fn() -> TIV,
     TIV: IntoView,
     B: Fn() -> BIV,
     BIV: IntoView,
+    M: Fn() -> MIV,
+    MIV: IntoView,
 {
     view! {
         <div
@@ -38,7 +41,7 @@ where
                 {bottom_icons()}
             </div>
             <div id="SidebarMenu" class="flex flex-col min-h-screen overflow-y-auto">
-                <p class="p-1">"zeru-ui"</p>
+                <p class="p-1">{menu()}</p>
             </div>
 
         </div>

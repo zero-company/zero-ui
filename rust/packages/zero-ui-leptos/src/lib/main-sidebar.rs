@@ -8,6 +8,10 @@ pub fn MainSidebar() -> impl IntoView {
 
     view! {
         <Sidebar
+            menu=|| {
+                view! { <p>Menu</p> }
+            }
+
             top_icons=|| {
                 view! {
                     <Icon
