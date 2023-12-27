@@ -13,7 +13,9 @@ where
             <div id="SidebarContainer" class="flex h-screen">
                 {sidebar()}
             </div>
-            <div id="BodyContainer">{body()}</div>
+            <div id="BodyContainer" class="flex flex-1">
+                {body()}
+            </div>
         </div>
     }
 }
