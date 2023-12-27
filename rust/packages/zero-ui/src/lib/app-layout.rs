@@ -1,10 +1,10 @@
 use leptos::*;
 
 #[component]
-pub fn AppLayout<H, HIV, S, SIV>(header: H, sidebar: S) -> impl IntoView
+pub fn AppLayout<B, BIV, S, SIV>(body: B, sidebar: S) -> impl IntoView
 where
-    H: Fn() -> HIV,
-    HIV: IntoView,
+    B: Fn() -> BIV,
+    BIV: IntoView,
     S: Fn() -> SIV,
     SIV: IntoView,
 {
@@ -13,7 +13,7 @@ where
             <div id="SidebarContainer" class="flex h-screen">
                 {sidebar()}
             </div>
-            <div id="HeaderContainer">{header()}</div>
+            <div id="BodyContainer">{body()}</div>
         </div>
     }
 }

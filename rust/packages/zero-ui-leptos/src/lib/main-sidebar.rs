@@ -1,6 +1,6 @@
 use leptos::*;
 use leptos_icons::*;
-use zero_ui::prelude::{Icon, Sidebar, SidebarTabs};
+use zero_ui::prelude::{Icon, Sidebar};
 
 #[component]
 pub fn MainSidebar() -> impl IntoView {
