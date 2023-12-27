@@ -1,12 +1,12 @@
 use leptos::*;
 
 #[component]
-pub fn HomePage() -> impl IntoView {
+pub fn ButtonPage() -> impl IntoView {
     let (count, set_count) = create_signal(0);
 
     view! {
         <div class="my-0 mx-auto max-w-3xl text-center">
-            <h2 class="p-6 text-4xl">"Under Development"</h2>
+            <h2 class="p-6 text-4xl">"Button"</h2>
 
             <button
                 class="bg-amber-600 hover:bg-sky-700 px-5 py-3 text-white rounded-lg"

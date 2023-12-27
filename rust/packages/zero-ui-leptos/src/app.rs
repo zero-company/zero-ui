@@ -1,4 +1,4 @@
-use crate::prelude::{HomePage, MainSidebar};
+use crate::prelude::*;
 use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
@@ -16,7 +16,8 @@ pub fn App() -> impl IntoView {
                     body=|| {
                         view! {
                             <Routes>
-                                <Route path="/" view=move || view! { <HomePage/> }/>
+                                <Route path="/" view=move || view! { <IndexPage/> }/>
+                                <Route path="/button" view=move || view! { <ButtonPage/> }/>
                             </Routes>
                         }
                     }
