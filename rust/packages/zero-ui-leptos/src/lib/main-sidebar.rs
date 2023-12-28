@@ -11,20 +11,21 @@ pub fn MainSidebar() -> impl IntoView {
         <Sidebar
             menu=|| {
                 view! {
-                    <div class="flex flex-col zero-divide-y">
-                        <div class="p-1">
+                    <div class="flex flex-1 flex-col zero-divide-y">
+                        <div class="p-2">
                             <p>"zero-ui"</p>
                         </div>
-                        <div class="p-1">
+                        <div class="p-2">
                             <A href="/">
                                 <strong>"index"</strong>
                             </A>
                         </div>
-                        <div class="p-1">
+                        <div class="p-2">
                             <A href="/button">
                                 <strong>"button"</strong>
                             </A>
                         </div>
+                        <div class="p-2"></div>
 
                     </div>
                 }

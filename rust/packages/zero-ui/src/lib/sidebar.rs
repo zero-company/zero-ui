@@ -40,8 +40,8 @@ where
                 <div class="grow"></div>
                 {bottom_icons()}
             </div>
-            <div id="SidebarMenu" class="flex flex-col min-h-screen overflow-y-auto">
-                <p class="p-1">{menu()}</p>
+            <div id="SidebarMenu" class="flex flex-1 flex-col min-h-screen overflow-y-auto">
+                {menu()}
             </div>
 
         </div>
