@@ -1,5 +1,6 @@
 use leptos::*;
 use leptos_icons::*;
+use leptos_router::*;
 use zero_ui::prelude::{Icon, Sidebar};
 
 #[component]
@@ -9,7 +10,24 @@ pub fn MainSidebar() -> impl IntoView {
     view! {
         <Sidebar
             menu=|| {
-                view! { <p>Menu</p> }
+                view! {
+                    <div class="flex flex-col zero-divide-y">
+                        <div class="p-1">
+                            <p>"zero-ui"</p>
+                        </div>
+                        <div class="p-1">
+                            <A href="/">
+                                <strong>"index"</strong>
+                            </A>
+                        </div>
+                        <div class="p-1">
+                            <A href="/button">
+                                <strong>"button"</strong>
+                            </A>
+                        </div>
+
+                    </div>
+                }
             }
 
             top_icons=|| {
