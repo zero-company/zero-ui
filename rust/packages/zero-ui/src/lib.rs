@@ -10,6 +10,10 @@ pub mod app_layout;
 pub mod icon;
 #[path = "lib/sidebar.rs"]
 pub mod sidebar;
+#[path = "lib/sub-app-layout.rs"]
+pub mod sub_app_layout;
+#[path = "lib/super-app-layout.rs"]
+pub mod super_app_layout;
 #[path = "lib/text.rs"]
 pub mod text;
 #[path = "lib/zero-icon.rs"]
@@ -20,6 +24,8 @@ pub mod prelude {
     pub use super::app_layout::*;
     pub use super::icon::*;
     pub use super::sidebar::*;
+    pub use super::sub_app_layout::*;
+    pub use super::super_app_layout::*;
     pub use super::text::*;
     pub use super::zero_icon::*;
 }
