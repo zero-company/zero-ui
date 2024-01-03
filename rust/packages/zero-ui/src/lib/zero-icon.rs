@@ -1,30 +1,7 @@
-#[derive(Debug, Default, Clone, Copy, PartialEq, Eq)]
-pub enum ZeroIcon {
-    #[default]
-    ZeroLogo,
-}
-
-const ZERO_LOGO: icondata_core::IconData = icondata_core::IconData {
-    style: None,
-    x: None,
-    y: None,
-    width: Some("24"),
-    height: Some("24"),
-    view_box: Some("0 0 24 24"),
-    stroke_linecap: Some("round"),
-    stroke_linejoin: Some("round"),
-    stroke_width: Some("2"),
-    stroke: Some("currentColor"),
-    fill: Some("none"),
-    data: r###"<circle cx="11" cy="11" r="8" />
-<line x1="21" y1="21" x2="16.65" y2="16.65" />"###,
-};
-
-impl From<ZeroIcon> for icondata_core::IconData {
-    fn from(icon: ZeroIcon) -> icondata_core::IconData {
-        match icon {
-            ZeroIcon::ZeroLogo => ZERO_LOGO,
-        }
-    }
-}
+pub const ZERO_ICON_SVG_CHILD: &str = r###"<path
+fill-rule="evenodd"
+clip-rule="evenodd"
+d="M160 320C248.366 320 320 248.366 320 160C320 71.6344 248.366 0 160 0C71.6344 0 0 71.6344 0 160C0 248.366 71.6344 320 160 320ZM160 272C221.856 272 272 221.856 272 160C272 98.1441 221.856 48 160 48C98.1441 48 48 98.1441 48 160C48 221.856 98.1441 272 160 272Z"
+fill="currentColor"
+></path>"###;
 
