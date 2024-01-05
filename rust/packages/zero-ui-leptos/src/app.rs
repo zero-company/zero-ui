@@ -2,7 +2,7 @@ use crate::prelude::*;
 use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
-use zero_ui::prelude::{SuperAppLayout, SubAppLayout};
+use zero_ui::prelude::{SubAppLayout, SuperAppLayout};
 
 #[component]
 pub fn App() -> impl IntoView {
@@ -23,7 +23,6 @@ pub fn App() -> impl IntoView {
                         }
                     }
                 />
-
             </SuperAppLayout>
         </Router>
     }

@@ -1,3 +1,4 @@
+use crate::prelude::{Icon, Text, ZERO_ICON_SVG_CHILD};
 use leptos::*;
 
 /*
@@ -9,8 +10,14 @@ zero-divide-y
 #[component]
 pub fn PreloadPage() -> impl IntoView {
     view! {
-        <div id="PreloadPage" class="flex h-screen w-screen justify-center items-center">
-            <h1>"ZERO"</h1>
+        <div id="PreloadPage" class="flex flex-col h-screen w-screen justify-center items-center">
+            <Icon
+                size="40"
+                class="flex shrink-0 justify-center items-center hover:brightness-150 pb-4"
+                svg_viewbox="0 0 320 320"
+                svg_child=ZERO_ICON_SVG_CHILD
+            />
+            <Text>"Loading..."</Text>
         </div>
     }
 }
