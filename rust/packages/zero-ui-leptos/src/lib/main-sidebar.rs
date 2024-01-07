@@ -25,6 +25,11 @@ pub fn MainSidebar() -> impl IntoView {
                                 <strong>"button"</strong>
                             </A>
                         </div>
+                        <div class="p-2">
+                            <A href="/blog">
+                                <strong>"blog"</strong>
+                            </A>
+                        </div>
                         <div class="p-2"></div>
 
                     </div>
