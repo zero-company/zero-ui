@@ -13,12 +13,9 @@ pub fn BlogAppLayout() -> impl IntoView {
     }
 }
 
-#[component]
+#[component(transparent)]
 pub fn BlogAppRoutes() -> impl IntoView {
-    view! {
-        <Route path="test" view=move || view! { <BlogIndexPage/> }/>
-        <Route path="" view=move || view! { <BlogIndexPage/> }/>
-    }
+    view! { <Route path="/" view=|| view! { <BlogIndexPage/> }/> }
 }
 
 #[component]

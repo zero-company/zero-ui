@@ -29,8 +29,7 @@ pub fn App() -> impl IntoView {
                                     }
                                 >
 
-                                    <Route path="/" view=move || view! { <h1>"Blog Index"</h1> }/>
-
+                                    <BlogAppRoutes/>
                                 </Route>
                             </Routes>
                         }
