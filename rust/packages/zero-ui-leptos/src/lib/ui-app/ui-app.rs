@@ -1,11 +1,27 @@
+use crate::prelude::*;
 use leptos::*;
+use leptos_router::*;
+use zero_ui::prelude::SubAppLayout;
 
-#[component]
+#[component(transparent)]
 pub fn UiApp() -> impl IntoView {
     view! {
-        <div class="my-0 mx-auto max-w-3xl text-center">
-            <h2 class="p-6 text-4xl">"Ui App"</h2>
-        </div>
+        <Route
+            path="/ui"
+            view=|| {
+                view! {
+                    <SubAppLayout
+                        sidebar=|| view! { <MainSidebar/> }
+                        body=|| {
+                            view! { <Outlet/> }
+                        }
+                    />
+                }
+            }
+        >
+
+            <Route path="/" view=|| view! { <UiIndexPage/> }/>
+        </Route>
     }
 }
 

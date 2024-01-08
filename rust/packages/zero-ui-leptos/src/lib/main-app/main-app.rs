@@ -4,10 +4,10 @@ use leptos_router::*;
 use zero_ui::prelude::SubAppLayout;
 
 #[component(transparent)]
-pub fn BlogApp() -> impl IntoView {
+pub fn MainApp() -> impl IntoView {
     view! {
         <Route
-            path="/blog"
+            path="/"
             view=|| {
                 view! {
                     <SubAppLayout
@@ -20,7 +20,8 @@ pub fn BlogApp() -> impl IntoView {
             }
         >
 
-            <Route path="/" view=|| view! { <BlogIndexPage/> }/>
+            <Route path="/" view=move || view! { <h1>"Loading"</h1> }/>
+            <Route path="/*any" view=move || view! { <h1>"Not Found"</h1> }/>
         </Route>
     }
 }

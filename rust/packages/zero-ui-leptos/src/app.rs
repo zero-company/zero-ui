@@ -2,7 +2,7 @@ use crate::prelude::*;
 use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
-use zero_ui::prelude::{SubAppLayout, SuperAppLayout};
+use zero_ui::prelude::SuperAppLayout;
 
 #[component]
 pub fn App() -> impl IntoView {
@@ -12,9 +12,8 @@ pub fn App() -> impl IntoView {
         <Router>
             <SuperAppLayout>
                 <Routes>
-                    <Route path="/" view=move || view! { <IndexPage/> }/>
-                    <Route path="/button" view=move || view! { <ButtonPage/> }/>
-                    <Route path="/*any" view=move || view! { <h1>"Not Found"</h1> }/>
+                    <MainApp/>
+                    <UiApp/>
                     <BlogApp/>
                 </Routes>
             </SuperAppLayout>
