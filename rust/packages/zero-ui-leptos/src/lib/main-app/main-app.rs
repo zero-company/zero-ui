@@ -24,7 +24,7 @@ pub fn MainApp() -> impl IntoView {
             }
         >
 
-            <Route path="/" view=move || view! { <h1>"Loading"</h1> }/>
+            <Route path="/" view=move || view! { <MainIndexPage/> }/>
             <Route path="/*any" view=move || view! { <h1>"Not Found"</h1> }/>
         </Route>
     }
