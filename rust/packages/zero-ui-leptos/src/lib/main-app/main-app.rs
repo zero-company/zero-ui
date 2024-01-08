@@ -3,6 +3,10 @@ use leptos::*;
 use leptos_router::*;
 use zero_ui::prelude::SubAppLayout;
 
+#[path = "main-index-page.rs"]
+pub mod main_index_page;
+pub use main_index_page::*;
+
 #[component(transparent)]
 pub fn MainApp() -> impl IntoView {
     view! {
