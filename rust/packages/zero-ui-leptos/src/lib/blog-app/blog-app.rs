@@ -3,6 +3,10 @@ use leptos::*;
 use leptos_router::*;
 use zero_ui::prelude::SubAppLayout;
 
+#[path = "blog-index-page.rs"]
+pub mod blog_index_page;
+pub use blog_index_page::*;
+
 #[component(transparent)]
 pub fn BlogApp() -> impl IntoView {
     view! {
