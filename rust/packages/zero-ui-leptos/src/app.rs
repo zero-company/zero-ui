@@ -11,20 +11,12 @@ pub fn App() -> impl IntoView {
     view! {
         <Router>
             <SuperAppLayout>
-                <SubAppLayout
-                    sidebar=|| view! { <MainSidebar/> }
-                    body=|| {
-                        view! {
-                            <Routes>
-                                <Route path="/" view=move || view! { <IndexPage/> }/>
-                                <Route path="/button" view=move || view! { <ButtonPage/> }/>
-                                <Route path="/*any" view=move || view! { <h1>"Not Found"</h1> }/>
-                                <BlogApp/>
-                            </Routes>
-                        }
-                    }
-                />
-
+                <Routes>
+                    <Route path="/" view=move || view! { <IndexPage/> }/>
+                    <Route path="/button" view=move || view! { <ButtonPage/> }/>
+                    <Route path="/*any" view=move || view! { <h1>"Not Found"</h1> }/>
+                    <BlogApp/>
+                </Routes>
             </SuperAppLayout>
         </Router>
     }

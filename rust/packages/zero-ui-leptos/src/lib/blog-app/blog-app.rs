@@ -21,7 +21,19 @@ pub fn BlogAppRoutes() -> impl IntoView {
 #[component(transparent)]
 pub fn BlogApp() -> impl IntoView {
     view! {
-        <Route path="/blog" view=BlogAppLayout>
+        <Route
+            path="/blog"
+            view=|| {
+                view! {
+                    <SubAppLayout
+                        sidebar=|| view! { <MainSidebar/> }
+                        body=|| {
+                            view! { <Outlet/> }
+                        }
+                    />
+                }
+            }
+        >
             <Route path="/" view=|| view! { <BlogIndexPage/> }/>
         </Route>
     }
