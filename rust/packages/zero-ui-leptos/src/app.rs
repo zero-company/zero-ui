@@ -19,18 +19,7 @@ pub fn App() -> impl IntoView {
                                 <Route path="/" view=move || view! { <IndexPage/> }/>
                                 <Route path="/button" view=move || view! { <ButtonPage/> }/>
                                 <Route path="/*any" view=move || view! { <h1>"Not Found"</h1> }/>
-                                <Route
-                                    path="/blog"
-                                    view=|| {
-                                        view! {
-                                            <h1>"blog-app"</h1>
-                                            <Outlet/>
-                                        }
-                                    }
-                                >
-
-                                    <BlogAppRoutes/>
-                                </Route>
+                                <BlogApp/>
                             </Routes>
                         }
                     }
