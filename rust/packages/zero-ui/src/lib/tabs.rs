@@ -8,12 +8,16 @@ pub struct Tab {
 
 /// Tabs Leptos Component
 #[component]
-pub fn Tabs<const TLENGTH: usize>(#[prop(optional)] tabs: Option<[Tab; TLENGTH]>) -> impl IntoView {
+pub fn Tabs<IV>(#[prop(into)] tabs: Vec<IV>) -> impl IntoView
+where
+    IV: IntoView,
+{
     view! {
         <div id="Tabs" class="">
-            <p>"Render Tabs"</p>
+            {tabs.into_iter().map(|tab| view! { <div>{tab}</div> }).collect_view()}
         </div>
     }
 }
 
-// TODO: Add default for const generic
+// TODO: Add tabs array default for const generic
+
