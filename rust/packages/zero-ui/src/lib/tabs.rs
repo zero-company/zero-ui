@@ -8,14 +8,17 @@ pub struct Tab {
 
 /// Tabs Leptos Component
 #[component]
-pub fn Tabs<IV, TIV>(
-    #[prop()] tabs: Vec<(String, TIV)>,
+pub fn Tabs<
+    IV,
+    //TIV
+>(
+    #[prop()] tabs: Vec<Tab>,
     #[prop(into)] tabs2: Vec<IV>,
     #[prop(optional)] active_tab: Option<ReadSignal<String>>,
 ) -> impl IntoView
 where
     IV: IntoView,
-    TIV: IntoView,
+    //TIV: IntoView,
 {
     view! {
         <div id="Tabs" class="">

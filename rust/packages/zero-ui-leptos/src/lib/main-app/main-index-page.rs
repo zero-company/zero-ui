@@ -1,5 +1,5 @@
 use leptos::*;
-use zero_ui::prelude::Tabs;
+use zero_ui::prelude::{Tab, Tabs};
 
 #[component]
 pub fn MainIndexPage() -> impl IntoView {
@@ -29,9 +29,18 @@ pub fn MainIndexPage() -> impl IntoView {
             </button>
             <Tabs
                 tabs=[
-                    ("Tab1".to_string(), view! { <p class="p-6 text-4xl">"Tab1"</p> }),
-                    ("Tab2".to_string(), view! { <p class="p-6 text-4xl">"Tab2"</p> }),
-                    ("Tab3".to_string(), view! { <p class="p-6 text-4xl">"Tab3"</p> }),
+                    Tab {
+                        id: "Tab1".to_string(),
+                        content: view! { <p class="p-6 text-4xl">"Tab1"</p> }.into_view(),
+                    },
+                    Tab {
+                        id: "Tab2".to_string(),
+                        content: view! { <p class="p-6 text-4xl">"Tab2"</p> }.into_view(),
+                    },
+                    Tab {
+                        id: "Tab3".to_string(),
+                        content: view! { <p class="p-6 text-4xl">"Tab3"</p> }.into_view(),
+                    },
                 ]
                     .to_vec()
 
