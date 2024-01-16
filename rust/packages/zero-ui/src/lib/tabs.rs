@@ -17,7 +17,7 @@ where
 {
     view! {
         <div id="Tabs" class="">
-            <p class="p-6">
+            <p>
                 "active_tab2:"
                 {move || {
                     match active_tab {
@@ -27,10 +27,30 @@ where
                 }}
 
             </p>
-            {tabs.into_iter().map(|tab| view! { <div>{tab}</div> }).collect_view()}
+            <p>{move || active_tab.map(|active_tab| active_tab.get()).unwrap_or_default()}</p>
+            {tabs
+                .into_iter()
+                .map(|tab| {
+                    view! {
+                        <div>
+                            // class:hidden=move || { true }
+                            {tab}
+                        </div>
+                    }
+                })
+                .collect_view()}
         </div>
     }
 }
 
 // TODO: Add tabs array default for const generic
+
+/*
+<input
+            class=input_class
+            disabled=move || disabled.map(|disabled| disabled.get()).unwrap_or_default()
+            ...
+        />
+*/
+// active_tab.unwrap_or("Tab1".to_string()) == "Tab1".to_string()
 
