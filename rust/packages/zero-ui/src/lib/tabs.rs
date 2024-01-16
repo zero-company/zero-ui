@@ -2,18 +2,20 @@ use leptos::*;
 
 #[derive(Debug, Clone)]
 pub struct Tab {
-    pub id: &'static str,
+    pub id: String,
     pub content: View,
 }
 
 /// Tabs Leptos Component
 #[component]
-pub fn Tabs<IV>(
-    #[prop(into)] tabs: Vec<IV>,
+pub fn Tabs<IV, TIV>(
+    #[prop()] tabs: Vec<(String, TIV)>,
+    #[prop(into)] tabs2: Vec<IV>,
     #[prop(optional)] active_tab: Option<ReadSignal<String>>,
 ) -> impl IntoView
 where
     IV: IntoView,
+    TIV: IntoView,
 {
     view! {
         <div id="Tabs" class="">
@@ -34,7 +36,7 @@ where
                 }}
 
             </p>
-            {tabs
+            {tabs2
                 .into_iter()
                 .map(|tab| {
                     view! {
@@ -55,11 +57,19 @@ where
 // TODO: Add tabs array default for const generic
 
 /*
-<input
-            class=input_class
-            disabled=move || disabled.map(|disabled| disabled.get()).unwrap_or_default()
-            ...
-        />
+{tabs2
+                .into_iter()
+                .map(|tab| {
+                    view! {
+                        <div class:hidden=move || {
+                            active_tab.map(|active_tab| active_tab.get()).unwrap_or_default()
+                                != "Tab1".to_string()
+                        }>
+
+                            {tab}
+                        </div>
+                    }
+                })
+                .collect_view()}
 */
-// active_tab.unwrap_or("Tab1".to_string()) == "Tab1".to_string()
 

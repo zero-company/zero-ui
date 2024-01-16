@@ -29,6 +29,13 @@ pub fn MainIndexPage() -> impl IntoView {
             </button>
             <Tabs
                 tabs=[
+                    ("Tab1".to_string(), view! { <p class="p-6 text-4xl">"Tab1"</p> }),
+                    ("Tab2".to_string(), view! { <p class="p-6 text-4xl">"Tab2"</p> }),
+                    ("Tab3".to_string(), view! { <p class="p-6 text-4xl">"Tab3"</p> }),
+                ]
+                    .to_vec()
+
+                tabs2=[
                     view! { <p class="p-6 text-4xl">"Tab1"</p> },
                     view! { <p class="p-6 text-4xl">"Tab2"</p> },
                 ]
