@@ -12,29 +12,28 @@ pub fn MainIndexPage() -> impl IntoView {
             <button
                 class="bg-amber-600 hover:bg-sky-700 px-5 py-3 text-white rounded-lg"
                 on:click=move |_| {
-                    set_active_tab.update(|active_tab| *active_tab = "Tab2".to_string())
-                }
-            >
-
-                "Tab2"
-            </button>
-            <button
-                class="bg-amber-600 hover:bg-sky-700 px-5 py-3 text-white rounded-lg"
-                on:click=move |_| {
                     set_active_tab.update(|active_tab| *active_tab = "Tab1".to_string())
                 }
             >
 
                 "Tab1"
             </button>
+            <button
+                class="bg-amber-600 hover:bg-sky-700 px-5 py-3 text-white rounded-lg"
+                on:click=move |_| {
+                    set_active_tab.update(|active_tab| *active_tab = "Tab2".to_string())
+                }
+            >
 
+                "Tab2"
+            </button>
             <Tabs
                 tabs=[
                     view! { <p class="p-6 text-4xl">"Tab1"</p> },
                     view! { <p class="p-6 text-4xl">"Tab2"</p> },
                 ]
 
-                activeTab=active_tab
+                active_tab=active_tab
             />
 
         </div>

@@ -10,7 +10,7 @@ pub struct Tab {
 #[component]
 pub fn Tabs<IV>(
     #[prop(into)] tabs: Vec<IV>,
-    #[prop(optional)] activeTab: Option<ReadSignal<String>>,
+    #[prop(optional)] active_tab: Option<ReadSignal<String>>,
 ) -> impl IntoView
 where
     IV: IntoView,
@@ -20,8 +20,8 @@ where
             <p class="p-6">
                 "active_tab2:"
                 {move || {
-                    match activeTab {
-                        Some(activeTab) => activeTab(),
+                    match active_tab {
+                        Some(active_tab) => active_tab(),
                         None => "N/A".to_string(),
                     }
                 }}
