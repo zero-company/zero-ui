@@ -27,13 +27,22 @@ where
                 }}
 
             </p>
-            <p>{move || active_tab.map(|active_tab| active_tab.get()).unwrap_or_default()}</p>
+            <p>
+                {move || {
+                    active_tab.map(|active_tab| active_tab.get()).unwrap_or_default()
+                        == "Tab1".to_string()
+                }}
+
+            </p>
             {tabs
                 .into_iter()
                 .map(|tab| {
                     view! {
-                        <div>
-                            // class:hidden=move || { true }
+                        <div class:hidden=move || {
+                            active_tab.map(|active_tab| active_tab.get()).unwrap_or_default()
+                                != "Tab1".to_string()
+                        }>
+
                             {tab}
                         </div>
                     }

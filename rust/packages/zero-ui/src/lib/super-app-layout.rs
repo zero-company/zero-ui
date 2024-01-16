@@ -5,6 +5,7 @@ use leptos::*;
 Tailwind Include:
 zero-divide-x
 zero-divide-y
+hidden
 */
 
 #[component]
