@@ -17,6 +17,16 @@ where
 {
     view! {
         <div id="Tabs" class="">
+            <p class="p-6">
+                "active_tab2:"
+                {move || {
+                    match activeTab {
+                        Some(activeTab) => activeTab(),
+                        None => "N/A".to_string(),
+                    }
+                }}
+
+            </p>
             {tabs.into_iter().map(|tab| view! { <div>{tab}</div> }).collect_view()}
         </div>
     }

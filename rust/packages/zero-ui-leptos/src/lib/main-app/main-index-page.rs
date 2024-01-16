@@ -28,12 +28,15 @@ pub fn MainIndexPage() -> impl IntoView {
                 "Tab1"
             </button>
 
-            <Tabs tabs=[
-                view! { <p class="p-6 text-4xl">"Tab1"</p> },
-                view! { <p class="p-6 text-4xl">"Tab2"</p> },
-            ]/>
+            <Tabs
+                tabs=[
+                    view! { <p class="p-6 text-4xl">"Tab1"</p> },
+                    view! { <p class="p-6 text-4xl">"Tab2"</p> },
+                ]
 
-        // activeTab=active_tab
+                activeTab=active_tab
+            />
+
         </div>
     }
 }
