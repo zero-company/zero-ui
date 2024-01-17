@@ -16,12 +16,18 @@ pub fn Tabs(
         <div id="Tabs" class="">
             {tabs
                 .into_iter()
-                .map(|tab| {
+                .map(|Tab { id, content }| {
                     view! {
-                        <div class:hidden=move || {
-                            active_tab.map(|active_tab| active_tab.get()).unwrap_or_default()
-                                != tab.id
-                        }>{tab.content}</div>
+                        <div
+                            id=&id
+                            class:hidden=move || {
+                                active_tab.map(|active_tab| active_tab.get()).unwrap_or_default()
+                                    != *(&id)
+                            }
+                        >
+
+                            {content}
+                        </div>
                     }
                 })
                 .collect_view()}
