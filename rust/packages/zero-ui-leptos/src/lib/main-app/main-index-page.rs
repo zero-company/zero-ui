@@ -28,7 +28,7 @@ pub fn MainIndexPage() -> impl IntoView {
                 "Tab2"
             </button>
             <Tabs
-                tabs=[
+                tabs=vec![
                     Tab {
                         id: "Tab1".to_string(),
                         content: view! { <p class="p-6 text-4xl">"Tab1"</p> }.into_view(),
@@ -42,7 +42,6 @@ pub fn MainIndexPage() -> impl IntoView {
                         content: view! { <p class="p-6 text-4xl">"Tab3"</p> }.into_view(),
                     },
                 ]
-                    .to_vec()
 
                 active_tab=active_tab
             />
