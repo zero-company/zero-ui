@@ -44,11 +44,6 @@ pub fn MainIndexPage() -> impl IntoView {
                 ]
                     .to_vec()
 
-                tabs2=[
-                    view! { <p class="p-6 text-4xl">"Tab1"</p> },
-                    view! { <p class="p-6 text-4xl">"Tab2"</p> },
-                ]
-
                 active_tab=active_tab
             />
 
