@@ -20,16 +20,21 @@ fn MainSidebar() -> impl IntoView {
                         tabs=vec![
                             Tab {
                                 id: "MainTab".to_string(),
-                                content: view! { <p class="p-6 text-4xl">"MainTab"</p> }.into_view(),
-                            },
-                            Tab {
-                                id: "SearchTab".to_string(),
-                                content: view! { <p class="p-6 text-4xl">"SearchTab"</p> }
+                                content: view! {
+                                    <div class="p-2">
+                                        <p>"Main Tab"</p>
+                                    </div>
+                                }
                                     .into_view(),
                             },
                             Tab {
-                                id: "Tab3".to_string(),
-                                content: view! { <p class="p-6 text-4xl">"Tab3"</p> }.into_view(),
+                                id: "SearchTab".to_string(),
+                                content: view! {
+                                    <div class="p-2">
+                                        <p>"Search Tab"</p>
+                                    </div>
+                                }
+                                    .into_view(),
                             },
                         ]
 
