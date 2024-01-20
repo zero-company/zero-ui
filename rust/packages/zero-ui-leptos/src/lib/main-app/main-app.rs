@@ -2,7 +2,7 @@
 use leptos::*;
 use leptos_icons::*;
 use leptos_router::*;
-use zero_ui::prelude::{Icon, Sidebar, SubAppLayout, ZERO_ICON_SVG_CHILD};
+use zero_ui::prelude::{Icon, Sidebar, SubAppLayout, Tab, Tabs, ZERO_ICON_SVG_CHILD};
 
 #[path = "main-index-page.rs"]
 pub mod main_index_page;
@@ -10,37 +10,30 @@ pub use main_index_page::*;
 
 #[component]
 fn MainSidebar() -> impl IntoView {
+    let (active_tab, set_active_tab) = create_signal("MainTab".to_string());
+
     view! {
         <Sidebar
             menu=|| {
                 view! {
-                    <div class="flex flex-1 flex-col zero-divide-y">
-                        <div class="p-2">
-                            <p>"zero-ui/main"</p>
-                        </div>
-                        <div class="p-2">
-                            <A href="/">
-                                <strong>"index"</strong>
-                            </A>
-                        </div>
-                        <div class="p-2">
-                            <A href="/button">
-                                <strong>"button"</strong>
-                            </A>
-                        </div>
-                        <div class="p-2">
-                            <A href="/blog">
-                                <strong>"blog"</strong>
-                            </A>
-                        </div>
-                        <div class="p-2">
-                            <A href="/ui">
-                                <strong>"ui"</strong>
-                            </A>
-                        </div>
-                        <div class="p-2"></div>
+                    <Tabs
+                        tabs=vec![
+                            Tab {
+                                id: "MainTab".to_string(),
+                                content: view! { <p class="p-6 text-4xl">"MainTab"</p> }.into_view(),
+                            },
+                            Tab {
+                                id: "Tab2".to_string(),
+                                content: view! { <p class="p-6 text-4xl">"Tab2"</p> }.into_view(),
+                            },
+                            Tab {
+                                id: "Tab3".to_string(),
+                                content: view! { <p class="p-6 text-4xl">"Tab3"</p> }.into_view(),
+                            },
+                        ]
 
-                    </div>
+                        active_tab=active_tab
+                    />
                 }
             }
 
