@@ -69,9 +69,15 @@ pub fn Icon(
     };
 
     view! {
-        <div id=id class=parsed_class style=style aria_label=aria_label>
+        <button
+            on:click=move |_| { logging::log!("test") }
+            id=id
+            class=parsed_class
+            style=style
+            aria_label=aria_label
+        >
             {svg}
-        </div>
+        </button>
     }
 }
 
