@@ -1,8 +1,8 @@
-//use crate::prelude::*;
+// use crate::prelude::*;
 use leptos::*;
 use leptos_icons::*;
 use leptos_router::*;
-use zero_ui::prelude::{Icon, Sidebar, SubAppLayout};
+use zero_ui::prelude::{Icon, Sidebar, SubAppLayout, ZERO_ICON_SVG_CHILD};
 
 #[path = "main-index-page.rs"]
 pub mod main_index_page;
@@ -45,18 +45,7 @@ fn MainSidebar() -> impl IntoView {
             }
 
             top_icons=|| {
-                view! {
-                    <Icon
-                        size="20"
-                        svg_viewbox="0 0 320 320"
-                        svg_child=r###"<path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M160 320C248.366 320 320 248.366 320 160C320 71.6344 248.366 0 160 0C71.6344 0 0 71.6344 0 160C0 248.366 71.6344 320 160 320ZM160 272C221.856 272 272 221.856 272 160C272 98.1441 221.856 48 160 48C98.1441 48 48 98.1441 48 160C48 221.856 98.1441 272 160 272Z"
-                        fill="currentColor"
-                        ></path>"###
-                    />
-                }
+                view! { <Icon size="20" svg_viewbox="0 0 320 320" svg_child=ZERO_ICON_SVG_CHILD/> }
             }
 
             bottom_icons=|| {
