@@ -23,8 +23,9 @@ fn MainSidebar() -> impl IntoView {
                                 content: view! { <p class="p-6 text-4xl">"MainTab"</p> }.into_view(),
                             },
                             Tab {
-                                id: "Tab2".to_string(),
-                                content: view! { <p class="p-6 text-4xl">"Tab2"</p> }.into_view(),
+                                id: "SearchTab".to_string(),
+                                content: view! { <p class="p-6 text-4xl">"SearchTab"</p> }
+                                    .into_view(),
                             },
                             Tab {
                                 id: "Tab3".to_string(),
@@ -38,7 +39,16 @@ fn MainSidebar() -> impl IntoView {
             }
 
             top_icons=|| {
-                view! { <Icon size="20" svg_viewbox="0 0 320 320" svg_child=ZERO_ICON_SVG_CHILD/> }
+                view! {
+                    <Icon
+                        size="20"
+                        svg_viewbox="0 0 320 320"
+                        svg_child=ZERO_ICON_SVG_CHILD
+                        on_click=move |_| {
+                            set_active_tab.update(|active_tab| *active_tab = "MainTab".to_string())
+                        }
+                    />
+                }
             }
 
             bottom_icons=|| {
@@ -46,9 +56,20 @@ fn MainSidebar() -> impl IntoView {
                     <Icon
                         leptos_icons_icon=Icon::from(FiIcon::FiSearch)
                         size="20"
-                        on_click=move |_| { logging::log!("Search") }
+                        on_click=move |_| {
+                            set_active_tab
+                                .update(|active_tab| *active_tab = "SearchTab".to_string())
+                        }
                     />
-                    <Icon leptos_icons_icon=Icon::from(FiIcon::FiUser) size="20"/>
+
+                    <Icon
+                        leptos_icons_icon=Icon::from(FiIcon::FiUser)
+                        size="20"
+                        on_click=move |_| {
+                            set_active_tab.update(|active_tab| *active_tab = "UserTab".to_string())
+                        }
+                    />
+
                     <Icon leptos_icons_icon=Icon::from(FiIcon::FiMessageCircle) size="20"/>
                     <Icon leptos_icons_icon=Icon::from(FiIcon::FiSettings) size="20"/>
                 }
