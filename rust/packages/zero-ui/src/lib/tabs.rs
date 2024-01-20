@@ -13,7 +13,7 @@ pub fn Tabs(
     #[prop(optional)] active_tab: Option<ReadSignal<String>>,
 ) -> impl IntoView {
     view! {
-        <div id="Tabs" class="">
+        <div id="Tabs" class="flex">
             {tabs
                 .into_iter()
                 .map(|Tab { id, content }| {
