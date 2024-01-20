@@ -43,7 +43,11 @@ fn MainSidebar() -> impl IntoView {
 
             bottom_icons=|| {
                 view! {
-                    <Icon leptos_icons_icon=Icon::from(FiIcon::FiSearch) size="20"/>
+                    <Icon
+                        leptos_icons_icon=Icon::from(FiIcon::FiSearch)
+                        size="20"
+                        on_click=move |_| { logging::log!("Search") }
+                    />
                     <Icon leptos_icons_icon=Icon::from(FiIcon::FiUser) size="20"/>
                     <Icon leptos_icons_icon=Icon::from(FiIcon::FiMessageCircle) size="20"/>
                     <Icon leptos_icons_icon=Icon::from(FiIcon::FiSettings) size="20"/>

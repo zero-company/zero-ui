@@ -15,6 +15,7 @@ pub fn Icon(
     #[prop(into, optional)] style: Option<AttributeValue>,
     #[prop(into, optional)] aria_label: Option<AttributeValue>,
     #[prop(into, optional)] size: Option<MaybeSignal<String>>,
+    #[prop(into, optional)] on_click: Option<Callback<ev::MouseEvent>>,
 ) -> impl IntoView {
     let svg = match (leptos_icons_icon, svg_child) {
         (Some(i), None) => leptos_icons::Icon(leptos_icons::IconProps {
@@ -68,9 +69,11 @@ pub fn Icon(
         None => default_class.into(),
     };
 
+    let default_cb = Callback::new(move |_: ev::MouseEvent| {});
+
     view! {
         <button
-            on:click=move |_| { logging::log!("test") }
+            on:click=on_click.unwrap_or(default_cb)
             id=id
             class=parsed_class
             style=style
